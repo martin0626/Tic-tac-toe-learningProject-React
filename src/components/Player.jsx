@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function Player({name, symbol, isActive}){
+export default function Player({name, symbol, isActive, onEdit}){
     const [isUpdating, setIsUpdating] = useState(false);
     const [playerName, setPlayerName] = useState(name);
     const [nameInput, setnameInput] = useState(playerName);
@@ -18,6 +18,8 @@ export default function Player({name, symbol, isActive}){
     const changeNameHandler = ()=>{
         if(nameInput.length > 1){
             setPlayerName(nameInput);
+
+            onEdit(symbol, nameInput);
         };
 
         setIsUpdating(false);
