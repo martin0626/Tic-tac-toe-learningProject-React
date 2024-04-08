@@ -71,7 +71,6 @@ function App() {
       return updatedTurns;
 
     })
-
   }
 
   function handleEditPlayer(symbol, name){
@@ -93,8 +92,8 @@ function App() {
     <main>
       <div id="game-container">
         <ol id="players" className="highlight-player">
-          <Player name={'Player 1'} symbol={'X'} isActive={activePlayer === 'X'} onEdit={handleEditPlayer}></Player>
-          <Player name={'Player 2'} symbol={'O'} isActive={activePlayer === 'O'} onEdit={handleEditPlayer}></Player> 
+          <Player name={players['X']} symbol={'X'} isActive={activePlayer === 'X'} onEdit={handleEditPlayer}></Player>
+          <Player name={players['O']} symbol={'O'} isActive={activePlayer === 'O'} onEdit={handleEditPlayer}></Player> 
         </ol>
         {winner && <GameOver winner={winner} onRematch={handleRematch}/>}
         {draw && <GameOver winner={winner} onRematch={handleRematch}/>}
